@@ -6,6 +6,9 @@ import Message from './Message';
 import db from './firebase';
 import firebase from 'firebase';
 import FlipMove from 'react-flip-move';
+import Logo from './images/Logo.png';
+import SendIcon from '@material-ui/icons/Send';
+import { IconButton } from '@material-ui/core';
 
 function App() {
 
@@ -42,16 +45,22 @@ function App() {
 
   return (
     <div className="App">
+    <img src={require('./images/Logo.png')} width="100" height="100"/>
+    
     <h1>Facebook Messenger!</h1>
     <h2>Welcome {username}</h2>
-    <form>
-      <FormControl>
-        <InputLabel htmlFor="my-input">Enter message here...</InputLabel>
-        <Input id="my-input" value= {input} onChange = {event => setInput(event.target.value)} aria-describedby="my-helper-text" />
-        <Button type='submit' disabled={!input} variant="contained" color="primary" onClick={sendMessage} >Send message</Button>
+
+    <form className="app__form">
+      <FormControl className="app__formControl">
+        <Input className="app__input" placeholder="Type a message..." id="my-input" value= {input} onChange = {event => setInput(event.target.value)} aria-describedby="my-helper-text" />
+        
+        <IconButton className="app__iconButton" type='submit' disabled={!input} variant="contained" color="primary" onClick={sendMessage} >
+          <SendIcon />
+        </IconButton>
+        
       </FormControl>
     </form>
-    
+
     <FlipMove>
     {
       messages.map(({id, message}) => (
@@ -59,6 +68,7 @@ function App() {
       ))
     }
     </FlipMove>
+
     </div>
   );
 }

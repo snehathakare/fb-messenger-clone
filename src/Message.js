@@ -11,7 +11,7 @@ const isUser = username === message.username;
       <Card className={isUser ? "message_user" : "message_guest"}>
         <CardContent>
           <Typography color="white" component="h2" variant="h5">
-            {message.username}: {message.message}
+            {!isUser && `${message.username || 'Unknown User'}:`} {message.message}
           </Typography>
         </CardContent>
       </Card>
