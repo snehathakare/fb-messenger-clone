@@ -1,0 +1,22 @@
+.message_user {
+  width: fit-content;
+  padding: 10px;
+  margin: 10px;
+  margin-left: auto; ;
+  background-color: #3385ff !important;
+  text-align: left !important ;
+}
+
+.message_guest {
+  width: fit-content;
+  padding: 10px;
+  margin: 10px;
+  margin-left: auto; ;
+  background-color: #d9d9d9 !important;
+}
+
+.message {
+  width: fit-content;
+  padding: 10px;
+  margin: 10px;
+}
